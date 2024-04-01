@@ -4,9 +4,9 @@ import React, { useContext, useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import LenguajeContext from "../Providers/LenguajeProvider";
 import SwitchTheme from "./SwitchTheme";
 import SwitchLanguaje from "./SwitchLanguaje";
-import LenguajeContext from "../Providers/LenguajeProvider";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);

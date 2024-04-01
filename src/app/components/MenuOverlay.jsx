@@ -11,12 +11,12 @@ const MenuOverlay = ({ links }) => {
           <NavLink href={link.path} title={link.title} />
         </li>
       ))}
-      <li>
+      {/* <li>
         <SwitchTheme />
       </li>
       <li>
         <SwitchLanguaje />
-      </li>
+      </li> */}
     </ul>
   );
 };

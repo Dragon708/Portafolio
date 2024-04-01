@@ -7,7 +7,7 @@ import Link from "next/link";
 import LenguajeContext from "../Providers/LenguajeProvider";
 
 const HeroSection = () => {
-  const { text } = useContext(LenguajeContext);
+  const { text, lenguaje } = useContext(LenguajeContext);
   return (
     <section className="lg:py-16">
       <div className="flex transition-all duration-700 ease-in-out justify-between mobile:flex-col ">
@@ -36,7 +36,11 @@ const HeroSection = () => {
               {text.hire}
             </Link>
             <a
-              href="/Pdf/JorgeGonzalezCV-EN.pdf"
+              href={
+                lenguaje === "en"
+                  ? "/Pdf/JorgeGonzalezCV-EN.pdf"
+                  : "/Pdf/JorgeGonzalezCV-ES.pdf"
+              }
               download
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3">
               {/* <span className="block dark:bg-[#121212] bg-white text-black dark:text-white hover:text-white hover:bg-slate-800 rounded-full px-5 py-2"></span> */}
