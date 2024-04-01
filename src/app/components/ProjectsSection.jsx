@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import LenguajeContext from "../Providers/LenguajeProvider";
 
 const projectsData = [
   {
@@ -65,7 +66,7 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
+  const { text } = useContext(LenguajeContext);
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
@@ -81,13 +82,13 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
+      <h2 className="text-center text-4xl font-bold dark:text-white text-black mt-4 mb-8 md:mb-12">
+        {text.MisProyetcos}
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="dark:text-white text-black flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
-          name="All"
+          name={text.All}
           isSelected={tag === "All"}
         />
         <ProjectTag
@@ -108,8 +109,7 @@ const ProjectsSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
+            transition={{ duration: 0.3, delay: index * 0.4 }}>
             <ProjectCard
               key={project.id}
               title={project.title}

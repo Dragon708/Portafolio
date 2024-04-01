@@ -1,5 +1,10 @@
-export const RecursosLenguaje = {
-  ES: {
+"use client";
+import { createContext, useEffect, useState } from "react";
+
+const LenguajeContext = createContext();
+
+const Storetext = {
+  es: {
     Portafolio: "Portafolio",
     About: "Sobre Mi",
     Projects: "Proyectos",
@@ -13,8 +18,8 @@ export const RecursosLenguaje = {
     Descripcion:
       "Soy un desarrollador web con 2 años de experiencia, disfruto transformando ideas en sitios web elegantes y funcionales. Mi pasión radica en crear código limpio, optimizar las experiencias de los usuarios y mantenerme actualizado con las últimas tendencias de la industria. Ya sea magia de frente o magia de fondo, estoy listo para enfrentar cualquier desafío. Construyamos algo notable juntos!",
     EduAndCert: "Educación y Certificaciones:",
-    More: "+ Mas",
-    MoreLink: "+ Mas en Linkedin",
+    More: "+ Más",
+    MoreLink: "+ Más en Linkedin",
     bachelor: "Licenciatura en Electrónica, (septiembre 2011 - julio 2014)",
     FrontEnd:
       "Meta Front-End Developer Certificado Profesional por Meta (marzo 2024)",
@@ -24,17 +29,19 @@ export const RecursosLenguaje = {
     EF: "EF SET English Certificado 77/100 (C2 Competente) oct 2023)",
     MisProyetcos: "Mis Proyectos:",
     All: "Todos",
-    Connect: "Conectame",
+    Connect: "Conectemonos",
     descripConnect:
       "Actualmente estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Ya sea que tenga una pregunta o simplemente quiera saludar, haré todo lo posible para responderle!",
     yourEmail: "Tu correo",
     subject: "Asunto",
     message: "Mensaje",
     send: "Enviar Mensaje",
+    sayHay: "Solo di hola",
+    lesttalk: "Hablemos de...",
   },
-  EN: {
-    Portafolio: "Porfolio",
-    About: "About",
+  en: {
+    Portafolio: "Portfolio",
+    About: "About Me",
     Projects: "Projects",
     Contact: "Contact",
     Hello: "Hello, I'm",
@@ -64,5 +71,31 @@ export const RecursosLenguaje = {
     subject: "Subject",
     message: "Message",
     send: "Send Message",
+    sayHay: "Just saying hi",
+    lesttalk: "Let's talk about...",
   },
 };
+
+export const LenguajeProvider = ({ children }) => {
+  const [lenguaje, setLenguaje] = useState("en");
+  const [text, setText] = useState(Storetext[lenguaje]);
+
+  const toggleLenguaje = () => {
+    if (lenguaje === "es") {
+      setLenguaje("en");
+    } else {
+      setLenguaje("es");
+    }
+  };
+
+  useEffect(() => {
+    setText(Storetext[lenguaje]);
+  }, [lenguaje]);
+
+  const data = { toggleLenguaje, text, lenguaje };
+  return (
+    <LenguajeContext.Provider value={data}>{children}</LenguajeContext.Provider>
+  );
+};
+
+export default LenguajeContext;
