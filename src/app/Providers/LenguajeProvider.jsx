@@ -16,7 +16,7 @@ const Storetext = {
     Certifications: "Certificaciones",
     Years: "Años",
     Descripcion:
-      "Soy un desarrollador web con 2 años de experiencia, disfruto transformando ideas en sitios web elegantes y funcionales. Mi pasión radica en crear código limpio, optimizar las experiencias de los usuarios y mantenerme actualizado con las últimas tendencias de la industria. Ya sea magia de frente o magia de fondo, estoy listo para enfrentar cualquier desafío. Construyamos algo notable juntos!",
+      "Soy un desarrollador web con 2 años de experiencia, disfruto transformando ideas en sitios web elegantes y funcionales. Mi pasión radica en crear código limpio, optimizar las experiencias de los usuarios y mantenerme actualizado con las últimas tendencias de la industria. Ya sea magia de front-end o magia de back-end, estoy listo para enfrentar cualquier desafío. Construyamos algo notable juntos!",
     EduAndCert: "Educación y Certificaciones:",
     More: "+ Más",
     MoreLink: "+ Más en Linkedin",
