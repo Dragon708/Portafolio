@@ -80,9 +80,9 @@ const projectsData = [
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const { text } = useContext(LenguajeContext);
+  const { text, ProjectsSectionRef } = useContext(LenguajeContext);
+
+  const isInView = useInView(ProjectsSectionRef, { once: true });
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
@@ -97,7 +97,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
+    <section ref={ProjectsSectionRef} id="projects">
       <h2 className="text-center text-4xl font-bold dark:text-white text-black mt-4 mb-8 md:mb-12">
         {text.MisProyetcos}
       </h2>
@@ -118,7 +118,7 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

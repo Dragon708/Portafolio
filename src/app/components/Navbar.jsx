@@ -10,19 +10,20 @@ import SwitchLanguaje from "./SwitchLanguaje";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const { text } = useContext(LenguajeContext);
+  const { text, EmailSectionref, ProjectsSectionRef, AboutSectionRef } =
+    useContext(LenguajeContext);
   const navLinks = [
     {
       title: text.About,
-      path: "#about",
+      path: AboutSectionRef,
     },
     {
       title: text.Projects,
-      path: "#projects",
+      path: ProjectsSectionRef,
     },
     {
       title: text.Contact,
-      path: "#contact",
+      path: EmailSectionref,
     },
   ];
   return (

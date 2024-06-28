@@ -12,7 +12,7 @@ import { useTheme } from "next-themes";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
-  const { text } = useContext(LenguajeContext);
+  const { text, EmailSectionref } = useContext(LenguajeContext);
   const { theme, setTheme } = useTheme();
   const handleSubmit = async (e) => {
     setIsSending(true);
@@ -58,6 +58,7 @@ const EmailSection = () => {
   };
   return (
     <section
+      ref={EmailSectionref}
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>

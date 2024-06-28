@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 const LenguajeContext = createContext();
 
@@ -80,6 +80,10 @@ export const LenguajeProvider = ({ children }) => {
   const [lenguaje, setLenguaje] = useState("en");
   const [text, setText] = useState(Storetext[lenguaje]);
 
+  const ProjectsSectionRef = useRef(null);
+  const AboutSectionRef = useRef(null);
+  const EmailSectionref = useRef(null);
+
   const toggleLenguaje = () => {
     if (lenguaje === "es") {
       setLenguaje("en");
@@ -92,7 +96,14 @@ export const LenguajeProvider = ({ children }) => {
     setText(Storetext[lenguaje]);
   }, [lenguaje]);
 
-  const data = { toggleLenguaje, text, lenguaje };
+  const data = {
+    toggleLenguaje,
+    text,
+    lenguaje,
+    EmailSectionref,
+    ProjectsSectionRef,
+    AboutSectionRef,
+  };
   return (
     <LenguajeContext.Provider value={data}>{children}</LenguajeContext.Provider>
   );

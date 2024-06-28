@@ -7,7 +7,7 @@ import LenguajeContext from "../Providers/LenguajeProvider";
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
-  const { text } = useContext(LenguajeContext);
+  const { text, AboutSectionRef } = useContext(LenguajeContext);
   const handleTabChange = (id) => {
     startTransition(() => {
       setTab(id);
@@ -15,7 +15,10 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="dark:text-white text-black" id="about">
+    <section
+      className="dark:text-white text-black"
+      ref={AboutSectionRef}
+      id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/about-image.png"
