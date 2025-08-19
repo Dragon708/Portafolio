@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useRef, useContext } from "react";
+import { motion, useInView } from "framer-motion";
+import { useContext, useState } from "react";
+import LenguajeContext from "../Providers/LenguajeProvider";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
-import LenguajeContext from "../Providers/LenguajeProvider";
 
 const projectsData = [
   {
@@ -76,6 +76,16 @@ const projectsData = [
     gitUrl: "https://github.com/Dragon708/Portafolio",
     previewUrl: "https://jorge-gonzalez.netlify.app",
   },
+  {
+    id: 8,
+    title: "Vet Locator",
+    description:
+      "Aplicacion creada con Next.js , Tailwind, LocationIQ API, backend con .NET 8 , desplegada en AWS Amplify",
+    image: "/images/projects/8.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Dragon708/pet-locator",
+    previewUrl: "https://master.d1fv1m3a0amg32.amplifyapp.com/",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -118,7 +128,7 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

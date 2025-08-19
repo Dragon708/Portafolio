@@ -1,14 +1,11 @@
 "use client";
-import React, { useContext, useState } from "react";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
-import Link from "next/link";
-import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { Spinner } from "@nextui-org/react";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import LenguajeContext from "../Providers/LenguajeProvider";
-import { useTheme } from "next-themes";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -18,9 +15,10 @@ const EmailSection = () => {
     setIsSending(true);
     e.preventDefault();
     const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
+      user_name: e.target.email.value,
+      user_email: e.target.email.value,
+      user_subject: e.target.subject.value,
+      user_message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -37,10 +35,10 @@ const EmailSection = () => {
       body: JSONdata,
     };
 
-    const response = await emailjs.sendForm(
-      "service_my1sugj",
+    const response = await emailjs.send(
+      "service_7nexf1i",
       "template_9bhxnha",
-      e.target,
+      data,
       "W3DjWj3JeP8302E6X"
     );
     console.log(response);
@@ -110,7 +108,7 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="dark:bg-[#18191E] bg-white  border border-[#33353F] placeholder-[#9CA2A9] text-black dark:text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="jacob@google.com"
             />
           </div>
@@ -125,7 +123,7 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="dark:bg-[#18191E] bg-white border border-[#33353F] placeholder-[#9CA2A9] text-black dark:text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder={text.sayHay}
             />
           </div>
@@ -138,7 +136,7 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="dark:bg-[#18191E] bg-white border border-[#33353F] placeholder-[#9CA2A9] text-black dark:text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder={text.lesttalk}
             />
           </div>

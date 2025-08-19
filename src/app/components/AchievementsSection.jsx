@@ -1,6 +1,6 @@
 "use client";
-import React, { useContext } from "react";
 import dynamic from "next/dynamic";
+import { useContext } from "react";
 import LenguajeContext from "../Providers/LenguajeProvider";
 
 const AnimatedNumbers = dynamic(
@@ -14,32 +14,35 @@ const AchievementsSection = () => {
   const { text } = useContext(LenguajeContext);
   const achievementsList = [
     {
-      metric: text.Projects,
-      value: "10",
+      metric: text.Years,
+      value: "3",
       postfix: "+",
     },
     {
-      prefix: "~",
-      metric: text.Users,
-      value: "2000,000",
+      metric: text.Projects,
+      value: "20",
+      postfix: "+",
     },
+    // {
+    //   prefix: "~",
+    //   metric: text.Users,
+    //   value: "3000,000",
+    // },
     {
       metric: text.Certifications,
-      value: "21",
+      value: "25",
     },
-    {
-      metric: text.Years,
-      value: "2",
-    },
+
   ];
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
+    <div className="pb-20">
+      <div className="sm:border-[#33353F] sm:border rounded-md py-2 px-16 flex flex-col sm:flex-row items-center justify-between">
         {achievementsList.map((achievement, index) => {
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0">
+              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
+            >
               <h2 className="dark:text-white text-black text-4xl font-bold flex flex-row">
                 {achievement.prefix}
                 <AnimatedNumbers

@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
-import React, { useContext, useState } from "react";
-import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "./MenuOverlay";
+import { useContext, useState } from "react";
 import LenguajeContext from "../Providers/LenguajeProvider";
-import SwitchTheme from "./SwitchTheme";
+import MenuOverlay from "./MenuOverlay";
+import NavLink from "./NavLink";
 import SwitchLanguaje from "./SwitchLanguaje";
+import SwitchTheme from "./SwitchTheme";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -27,18 +26,18 @@ const Navbar = () => {
     },
   ];
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 dark:bg-[#121212] bg-[#f7f4f7] bg-opacity-100">
+    <nav className="fixed mx-auto border dark:border-[#33353F] border-slate-200 top-0 left-0 right-0 z-10 dark:bg-[#121212] bg-[#f7f4f7] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
+        {/* <Link
           href={"/"}
           className="text-2xl md:text-5xl text-black dark:text-white font-semibold">
           {text.Portafolio}
-        </Link>
+        </Link> */}
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white">
+              className="flex items-center px-3 py-2 border rounded dark:border-slate-200 dark:text-slate-200 text-slate-700 hover:text-white hover:border-white">
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
@@ -58,8 +57,8 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="hidden md:flex  justify-between items-center p-2">
-          <div className="menu hidden md:flex gap-2 md:w-auto">
+        <div className="flex  justify-between items-center p-2">
+          <div className="menu flex gap-2 md:w-auto">
             <SwitchTheme />
             <SwitchLanguaje />
           </div>

@@ -7,16 +7,33 @@ const Storetext = {
   es: {
     Portafolio: "Portafolio",
     About: "Sobre Mi",
-    Projects: "Proyectos",
+    Projects: "Proyectos Completados",
     Contact: "Contacto",
     Hello: "Hola, Soy",
     hire: "Contratame",
     Download: "Descargar CV",
     Users: "Usuarios",
-    Certifications: "Certificaciones",
-    Years: "Años",
-    Descripcion:
-      "Soy un desarrollador web con 2 años de experiencia, disfruto transformando ideas en sitios web elegantes y funcionales. Mi pasión radica en crear código limpio, optimizar las experiencias de los usuarios y mantenerme actualizado con las últimas tendencias de la industria. Ya sea magia de front-end o magia de back-end, estoy listo para enfrentar cualquier desafío. Construyamos algo notable juntos!",
+    Certifications: "Certificaciones Profesionales",
+    Years: "Años de Experiencia",
+    greeting: "👋 Sobre Mí",
+    intro:
+      "Como desarrollador web senior, me enfoco en diseñar y entregar soluciones digitales personalizadas que sean escalables, intuitivas y sostenibles. Mi experiencia abarca tecnologías modernas de frontend y backend, con énfasis en arquitectura limpia, rendimiento y diseño centrado en el usuario.",
+    credentials:
+      "Los proyectos que lidero se guían por metodologías ágiles y buenas prácticas de la industria, con atención constante a:",
+    bullets: [
+      "🚀 Construcción de aplicaciones web de alto rendimiento",
+      "🧩 Diseño de sistemas escalables con código mantenible",
+      "🎯 Mejora de la experiencia de usuario mediante diseño UI/UX reflexivo",
+      "🔐 Desarrollo de integraciones y APIs seguras y confiables",
+      "📈 Apoyo a la transformación digital en diversas industrias"
+    ],
+    passion:
+      "Valoro la excelencia técnica, el aprendizaje continuo y la resolución colaborativa de problemas. Ya sea lanzando nuevos productos, optimizando flujos de trabajo o integrando funciones con IA, el objetivo siempre es generar impacto real mediante tecnología inteligente.",
+    lookingAhead: "💼 Mirando al Futuro",
+    future:
+      "Abierto a nuevas oportunidades que involucren proyectos impactantes, colaboración en equipo y soluciones escalables.",
+    closing:
+      "Si estás construyendo algo ambicioso, conectemos y exploremos cómo hacerlo crecer juntos.",
     EduAndCert: "Educación y Certificaciones:",
     More: "+ Más",
     MoreLink: "+ Más en Linkedin",
@@ -27,6 +44,7 @@ const Storetext = {
     ReacyNative: "React Native Certificación por Meta (marzo 2024 )",
     React: "Advance React por Meta (Agosto 2023 )",
     EF: "EF SET English Certificado 77/100 (C2 Competente) oct 2023)",
+    AI: "IBM AI Develloper Certificacion Profesional (julio 2025)",
     MisProyetcos: "Mis Proyectos:",
     All: "Todos",
     Connect: "Conectemonos",
@@ -42,16 +60,33 @@ const Storetext = {
   en: {
     Portafolio: "Portfolio",
     About: "About Me",
-    Projects: "Projects",
+    Projects: "Projects Completed",
     Contact: "Contact",
     Hello: "Hello, I'm",
     hire: "Hire Me",
     Download: "Download CV",
     Users: "Users",
-    Certifications: "Certifications",
-    Years: "Years",
-    Descripcion:
-      " I am a web developer with 2 years of experience, I enjoy transforming ideas into elegant, functional websites. My passion lies in crafting clean code, optimizing user experiences, and staying up-to-date with the latest industry trends. Whether it’s front-end magic or back-end wizardry, I’m ready to tackle any challenge. Let’s build something remarkable together!",
+    Certifications: "Professional Certifications",
+    Years: "Years of Experience",
+    greeting: "👋 About Me",
+    intro:
+      "As a senior web developer, I focus on designing and delivering custom digital solutions that are scalable, intuitive, and built to last. My experience spans modern frontend and backend technologies, with a strong emphasis on clean architecture, performance, and user-centered design.",
+    credentials:
+      "Projects I lead are guided by agile methodologies and industry best practices, with consistent attention to:",
+    bullets: [
+      "🚀 Building high-performance web applications",
+      "🧩 Designing scalable systems with maintainable code",
+      "🎯 Improving user experience through thoughtful UI/UX",
+      "🔐 Developing secure, reliable integrations and APIs",
+      "📈 Supporting digital transformation across industries"
+    ],
+    passion:
+      "I value technical excellence, continuous learning, and collaborative problem-solving. Whether launching new products, streamlining workflows, or integrating AI-powered features, the goal is always to deliver meaningful impact through smart technology.",
+    lookingAhead: "💼 Looking Ahead",
+    future:
+      "Open to new opportunities that involve impactful projects, strong team collaboration, and scalable innovation.",
+    closing:
+      "If you're building something ambitious, let’s connect and explore how we can make it thrive—together.",
     EduAndCert: "Education and Certifications:",
     More: "+ More",
     MoreLink: "+ More in Linkedin",
@@ -60,8 +95,9 @@ const Storetext = {
       "Meta Front-End Developer Professional Certificate by Meta (march 2024)",
     Net: ".NET FullStack Developer specialization by Courcera (march 2024 )",
     ReacyNative: "React Native Certification by Meta (march 2024 )",
-    React: "Advance React por Meta (August 2023 )",
+    React: "Advance React by Meta (August 2023 )",
     EF: "EF SET English Certificate 77/100 (C2 Proficiente) oct 2023)",
+    AI: "IBM AI Developer Professional Certificate (july 2025)",
     MisProyetcos: "My Projects:",
     All: "All",
     Connect: "Let's Connect",
